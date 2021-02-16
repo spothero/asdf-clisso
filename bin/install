@@ -42,7 +42,7 @@ get_filename() {
     local platform="$1"
     local version="$2"
 
-    echo "clisso_${platform}.tar.gz"
+    echo "clisso_${platform}.zip"
 }
 
 get_download_url() {
