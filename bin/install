@@ -7,7 +7,7 @@ install_clisso() {
   local install_type=$1
   local version=$2
   local install_path=$3
-  local platform="$(uname | tr '[:upper:]' '[:lower:]')_amd64"
+  local platform="$(uname | tr '[:upper:]' '[:lower:]')-amd64"
   local bin_install_path="$install_path/bin"
   local binary_path="$bin_install_path/clisso"
   local download_url=$(get_download_url $version $platform)
@@ -33,7 +33,7 @@ install_clisso() {
 
   echo "Copying binary"
   tar -zxf ${download_path} --directory $tmp_download_dir
-  cp ${tmp_download_dir}/cr ${bin_install_path}/helm-cr
+  cp ${tmp_download_dir}/clisso-${platform} ${bin_install_path}/clisso
 
   chmod +x ${binary_path}
 }
@@ -42,7 +42,7 @@ get_filename() {
     local platform="$1"
     local version="$2"
 
-    echo "clisso_${platform}.tar.gz"
+    echo "clisso-${platform}.zip"
 }
 
 get_download_url() {
