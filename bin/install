@@ -33,7 +33,7 @@ install_clisso() {
 
   echo "Copying binary"
   tar -zxf ${download_path} --directory $tmp_download_dir
-  cp ${tmp_download_dir}/cr ${bin_install_path}/helm-cr
+  cp ${tmp_download_dir}/clisso-${platform} ${bin_install_path}/clisso
 
   chmod +x ${binary_path}
 }
