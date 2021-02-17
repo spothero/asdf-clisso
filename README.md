@@ -5,7 +5,7 @@
 ## Install
 
 ```
-asdf plugin-add clisso https://github.com/willnewby/asdf-clisso.git
+asdf plugin-add clisso https://github.com/spothero/asdf-clisso.git
 ```
 
 ## Use
