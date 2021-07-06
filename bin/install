@@ -32,7 +32,12 @@ install_clisso() {
   rm -f $binary_path 2>/dev/null || true
 
   echo "Copying binary"
-  tar -zxf ${download_path} --directory $tmp_download_dir
+  if [[ $download_path == *.zip ]]; then
+    unzip ${download_path} -d $tmp_download_dir
+  else
+    tar -zxf ${download_path} --directory $tmp_download_dir
+  fi
+  
   cp ${tmp_download_dir}/clisso-${platform} ${bin_install_path}/clisso
 
   chmod +x ${binary_path}
