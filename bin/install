@@ -12,11 +12,7 @@ install_clisso() {
   local binary_path="$bin_install_path/clisso"
   download_url=$(get_download_url "$version" "$platform")
 
-  if [ "$TMPDIR" = "" ]; then
-    tmp_download_dir=$(mktemp -d -t clisso_XXXXXX)
-  else
-    tmp_download_dir=$TMPDIR
-  fi
+  tmp_download_dir="${TMPDIR:-$(mktemp -d -t clisso_XXXXXX)}"
 
   mkdir -p "${bin_install_path}"
 
